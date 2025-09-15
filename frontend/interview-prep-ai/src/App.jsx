@@ -6,6 +6,8 @@ import LandingPage from "./pages/LandingPage";
 import Dashboard from "./pages/Home/Dashboard";
 import InterviewPrep from "./pages/InterviewPrep/InterviewPrep";
 import UserProvider from './context/userContext';
+import TermsPage from './pages/Footer/TermsPage';
+import PrivacyPage from './pages/Footer/PrivacyPage';
 
 const App = () => {
   return (
@@ -15,9 +17,12 @@ const App = () => {
         <Routes>
           {/* Default Route */}
           <Route path="/" element={<LandingPage />} />
+           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/interview-prep/:sessionId" element={<InterviewPrep />} />
+         
 
         </Routes>
       </Router>

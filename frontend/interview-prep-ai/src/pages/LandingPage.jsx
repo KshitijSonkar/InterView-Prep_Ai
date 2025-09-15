@@ -8,7 +8,7 @@ import Login from './Auth/Login';
 import SignUp from './Auth/SignUp';
 import { UserContext } from '../context/userContext';
 import ProfileInfoCard from '../components/Cards/ProfileInfoCard';
-
+import Footer from '../components/layouts/footer'; 
 
 const LandingPage = () => {
 
@@ -28,10 +28,8 @@ const LandingPage = () => {
   };
 
   return (
-
     <>
-
-      <div className='w-full min-h-full bg-[#F7CFD8]'>
+      <div className='w-full bg-[#F7CFD8]'>
         <div className='w-[500px] h-[500px] bg-[#A53860] blur-[300px] absolute top-0 left-0'/>
 
         <div className='w-9/10 container mx-auto px-4 pt-6 pb-[200px] relative z-10'>
@@ -60,7 +58,7 @@ const LandingPage = () => {
 
               <h1 className='text-5xl text-black font-medium mb-6 leading-tight'>
                 Ace Interviews with <br/>
-                <span className='text-transparent bg-clip-text bg-[radial-gradient(circle,_#7D1C4A_0%,_#670D2F_100%)] bg-[length:200%_200%] animate-text-shine font-semibold'>
+                <span className='text-transparent bg-clip-text bg-[radial-gradient(circle,#7D1C4A_0%,#670D2F_100%)] bg-[length:200%_200%] animate-text-shine font-semibold'>
                   AI-Powered
                 </span>{" "}
                 Learning
@@ -78,20 +76,19 @@ const LandingPage = () => {
               <button className='bg-black text-sm font-semibold text-white px-7 py-2.5 rounded-full hover:bg-[#FFEEF4] hover:text-black border border-[#F7CFD8] hover:border-[#670D2F] transition-colors cursor-pointer' onClick={handleCTA}>
                 Get Started
               </button>
-
             </div>
           </div>
         </div>
       </div>
 
-      <div className='w-full min-h-full relative z-10'>
+      <div className='w-full relative z-10'>
         <div>
           <section className='flex items-center justify-center -mt-36'>
             <img src={HERO_IMG} alt="Hero Image" className='w-[80vw] rounded-lg' />
           </section>
         </div>
 
-        <div className='w-full min-h-full bg-[#F7CFD8] mt-10'>
+        <div className='w-full bg-[#F7CFD8] mt-10'>
           <div className='w-9/10 container mx-auto px-4 pt-10 pb-20'>
             <section className='mt-5'>
               <h2 className='text-2xl font-medium text-center mb-12'>
@@ -112,7 +109,6 @@ const LandingPage = () => {
                 </div>
 
                 {/* Remaining 2 cards */}
-
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                   {APP_FEATURES.slice(3).map((feature) => (
                     <div
@@ -128,12 +124,9 @@ const LandingPage = () => {
             </section>
           </div>
         </div>
-
-        <div className='text-sm bg-gray-50 text-secondary text-center p-5 mt-5'>
-          Made with ❤️... Happy Coding
-        </div>
       </div>
 
+      <Footer />
 
       <Modal
         isOpen = {openAuthModal}
