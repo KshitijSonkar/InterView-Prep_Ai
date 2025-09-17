@@ -39,6 +39,11 @@ app.use("/api/ai/generate-explanation", protect, generateConceptExplanation);
 // Serve uploads folder
 app.use("/uploads", express.static(path.join(__dirname,"uploads"), {}));
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'Server is running', time: new Date().toISOString() });
+});
+
 // Start Server 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); 
